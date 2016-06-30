@@ -24,6 +24,8 @@ public class Principal extends AppCompatActivity {
         EditText sobrenomeEdit = (EditText) findViewById(R.id.sobrenome);
         String sobrenome = sobrenomeEdit.getText().toString();
 
+
+        // criando o bundle e adicionando strings com chaves
         Bundle nomes = new Bundle();
         nomes.putString("chaveNome", nome);
         nomes.putString("chaveSobrenome", sobrenome);
@@ -31,7 +33,8 @@ public class Principal extends AppCompatActivity {
         intencao.putExtras(nomes);
 
         startActivity(intencao);
-        /* não dá para enviar uma intent com duas extras
+
+        /* não dá para enviar uma intent com dois extras
         EditText sobrenomeEdit = (EditText) findViewById(R.id.sobrenome);
         String sobrenome = nomeEdit.getText().toString();
         intencao.putExtra(codigoSobrenome, sobrenome);

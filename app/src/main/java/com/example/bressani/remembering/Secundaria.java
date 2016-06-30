@@ -17,6 +17,7 @@ public class Secundaria extends AppCompatActivity {
 
         Bundle nomes = intencao.getExtras();
 
+        //procurando a string pela chave no bundle da intent
         String nome = nomes.getString("chaveNome");
         String sobrenome = nomes.getString("chaveSobrenome");
 
