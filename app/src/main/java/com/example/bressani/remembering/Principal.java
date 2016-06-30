@@ -7,8 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class Principal extends AppCompatActivity {
-    public final static String codigoNome = "enviarNome";
-    public final static String codigoSobrenome = "enviarSobrenome";
+    public final static String codigoIntent = "codigo";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +17,27 @@ public class Principal extends AppCompatActivity {
 
     public void enviarParaSecundaria(View view) {
         Intent intencao = new Intent(this, Secundaria.class);
+
         EditText nomeEdit = (EditText) findViewById(R.id.nome);
         String nome = nomeEdit.getText().toString();
-        intencao.putExtra(codigoNome, nome);
 
+        EditText sobrenomeEdit = (EditText) findViewById(R.id.sobrenome);
+        String sobrenome = sobrenomeEdit.getText().toString();
 
+        Bundle nomes = new Bundle();
+        nomes.putString("chaveNome", nome);
+        nomes.putString("chaveSobrenome", sobrenome);
+
+        intencao.putExtras(nomes);
+
+        startActivity(intencao);
+        /* não dá para enviar uma intent com duas extras
         EditText sobrenomeEdit = (EditText) findViewById(R.id.sobrenome);
         String sobrenome = nomeEdit.getText().toString();
         intencao.putExtra(codigoSobrenome, sobrenome);
         startActivity(intencao);
+        */
+
+
     }
 }

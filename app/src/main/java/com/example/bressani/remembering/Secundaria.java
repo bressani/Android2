@@ -15,8 +15,10 @@ public class Secundaria extends AppCompatActivity {
 
         Intent intencao = getIntent();
 
-        String nome = intencao.getStringExtra(Principal.codigoNome);
-        String sobrenome = intencao.getStringExtra(Principal.codigoSobrenome);
+        Bundle nomes = intencao.getExtras();
+
+        String nome = nomes.getString("chaveNome");
+        String sobrenome = nomes.getString("chaveSobrenome");
 
 
         TextView nomeText = (TextView) findViewById(R.id.nome);
